@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LegsGO  Register Page </title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+<body id="bodyLogin">
+
+<div class = "inner">
+    <a href="" class="logo" th:href="@{/}">LEGs<span id="spanLogin">GO</span></a>
+</div>
+
+<div id= "registerBackground">
+    <img th:src="@{/assets/loginImg.png}">
+</div>
+
+<div id = "register">
+    <div id="innerRegister">
+        <div id="registerTitle">
+            <h3>Bem-vindo ao LEGs<span>GO</span></h3>
+        </div>
+        <form th:action="@{/registo}" method="post">
+            <input type="text" name="username" placeholder="Username"/>
+            <input type="email" name="email1" placeholder="Email">
+            <input type="email" name="email2" placeholder="Email Confirmação">
+            <input type="password" name="password1" placeholder="Password"></p>
+            <input type="password" name="password2" placeholder="Password Confirmação"/>
+            <button>Criar conta</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

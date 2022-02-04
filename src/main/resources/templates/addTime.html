@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar tempo de um participante</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<img id= "addTimeBackground" th:src="@{/assets/stopwatch.jpeg}">
+<div id="addTime">
+    <div id="innerTime">
+        <div id="timeTitle">
+            <h3>Adicionar tempo de um participante:</h3>
+        </div>
+
+        <form method="get" th:action="@{/registarTempo}">
+
+            <p>Evento:
+                <select id="selectEvent" name = "idEvent">
+                    <option selected disabled>Escolha um evento:</option>
+                    <option  th:each="event : ${listEvents}"
+                             th:value= "${event.id}"
+                             th:text="${event.nome}"></option>
+                </select>
+            </p>
+
+            <p> Ponto da Prova: <input type="text" name="pontoEvent" placeholder="start, P1, P2, P3 ou finish" required></p>
+
+            <p> Dorsal: <input type="number" name="dorsalEvent" min="1" placeholder="dorsal" required></p>
+
+            <p> Data: <input type="text" name="dataEvent" placeholder='yyyy-mm-dd' required></p>
+
+            <p> Hora: <input type="text" name="horaEvent" placeholder='hh:mm:ss' required></p>
+
+            <p><button type="submit">Registar Tempo</button></p>
+
+            <p id="backAddTime"><a th:href="@{/admin}">voltar</a></p>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

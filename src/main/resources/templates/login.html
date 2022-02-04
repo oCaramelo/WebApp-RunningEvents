@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LegsGO Login Page </title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+<body id="bodyLogin">
+
+<div class = "inner">
+    <a href="" class="logo" th:href="@{/}">LEGs<span id="spanLogin">GO</span></a>
+</div>
+
+<div id= "loginBackground">
+    <img th:src="@{/assets/loginImg.png}">
+</div>
+
+<div id = "login">
+    <div id="innerLogin">
+        <div id="loginTitle">
+            <h3>Bem-vindo ao LEGs<span>GO</span></h3>
+        </div>
+        <div id="loginErrorMessage" th:if = "${param.error}">
+            Username ou password incorretos!
+        </div>
+        <form id="loginForm" th:action ="@{/login}" method="post">
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <button>Log in</button>
+            <p id="registerMessage">Ainda não tem conta? Clique <a th:href="@{/register}" id ="registarHeader">aqui</a>!</p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

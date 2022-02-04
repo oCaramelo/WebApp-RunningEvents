@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>LEGsGO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+<body id="mainBody">
+<header>
+    <div class = "inner">
+        <a href="" class="logo" th:href="@{/}">LEGs<span>GO</span></a>
+
+        <ul id = "nav">
+            <li><a href="#sobreNos" class="hover">Sobre nós</a></li>
+            <li><a href = "#headerClassifications" class="hover">Classificação</a></li>
+            <div sec:authorize="hasRole('ROLE_staff')" class = "twoButtons">
+                <li><a th:href="@{/admin}" class = "hover">Eventos</a></li>
+                <form th:href="@{/homepage}"  th:action="@{/logout}" method="post">
+                    <li><button class ="button" type="submit">Logout</button></li>
+                </form>
+
+            </div>
+            <div sec:authorize="hasRole('ROLE_atleta')" class = "twoButtons" >
+                <li><a th:href="@{/user} " class = "hover">Eventos</a></li>
+                <form th:href="@{/homepage}"  th:action="@{/logout}" method="post">
+                    <li><button class ="button" type="submit">Logout</button></li>
+                </form>
+
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <li><a th:href="@{/login}" class="button">Login</a></li>
+            </div>
+        </ul>
+    </div>
+
+</header>
+
+<div id = "headerEvents">
+    <div class = "innerEvents">
+
+        <a href="" class="title" id="titulo"><span id = "spanTitulo">espaço</span> Eventos &#8594;</a>
+
+        <ul>
+            <form id = "procurar" th:action="@{/eventos/pesquisa}" method="get">
+                <li><input id="search" name="valor" type="text" placeholder="pesquise aqui">
+            <select id = "dateorname" autocomplete = "off" name="tipo">
+                <option value="data">Data</option>
+                <option value="nome"selected="selected">Nome</option>
+            </select>
+                </li>
+            </form>
+            <form  th:action="@{/eventos/mostrarEventosPassados}" method="get">
+                <li><button class ="eventsButtons" onclick='addTitle("Eventos Decorridos")' type="submit">Decorridos</button></li>
+            </form>
+            <form  th:action="@{/eventos/mostrarEventosAtuais}" method="get">
+                <li><button class ="eventsButtons" type="submit">Hoje</button></li>
+            </form>
+            <form  th:action="@{/eventos/mostrarEventosFuturos}" method="get">
+                <li><button class ="eventsButtons" type="submit">Próximos</button></li>
+            </form>
+        </ul>
+    </div>
+</div>
+
+<div id = "eventos">
+
+    <div id= "eventsListEmpty" th:if="${#lists.isEmpty(eventsList)}">
+        <ul>
+            <li class = "eventsList" >Não foram encontrados eventos</li>
+        </ul>
+    </div>
+
+    <div id ="eventsListNotEmpty" th:if="${not #lists.isEmpty(eventsList)}">
+        <ul th:each="event : ${eventsList}">
+            <li class = "eventsList" th:text="${event.nome}"></li>
+            <li class = "eventsList" th:text="${event.local}"></li>
+            <li class = "eventsList" th:text="${event.data}"></li>
+            <li class = "eventsList" th:text="${event.descricao}"></li>
+            <li class = "eventsList" th:text="${event.valor}+'€'"></li>
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+<div id="paginationButtons">
+    <ul>
+        <li th:class="${currentPage==status.index} ? 'active' : ''" th:each="page, status: ${pages}">
+            <a th:href="@{__${#httpServletRequest.requestURI}__(page=${status.index})}" th:text="${status.index}"></a>
+        </li>
+    </ul>
+</div>
+
+<div id="headerParticipants">
+
+    <div class = "innerEvents">
+
+    <a href="" class="title"><span id = "spanTituloParticipantes">consultar</span> Participantes &#8594;</a>
+
+        <ul>
+            <form  method="post" th:action="@{/verParticipantes}">
+
+            <li><select  name = "idEvent" required>
+                <option value="" disabled selected>Escolha um evento:</option>
+                <option  th:each="event : ${listAllEvents}"
+                         th:value= "${event.id}"
+                         th:text="${event.nome}"></option>
+            </select>
+            <button class="eventsButtons" type="submit">Pesquisar</button></li>
+
+            </form>
+        </ul>
+
+    </div>
+</div>
+
+<div id = "participants">
+
+    <table>
+        <tr th:if="${not #lists.isEmpty(listParticipants)}">
+            <th>Nome</th>
+            <th>Dorsal</th>
+            <th>Género</th>
+            <th>Escalão</th>
+            <th>Confirmado</th>
+        </tr>
+        <tr th:each="participants : ${listParticipants}">
+            <td th:text = "${participants.nome}"></td>
+            <td th:text = "${participants.dorsal}"></td>
+            <td th:text = "${participants.genero}"></td>
+            <td th:text = "${participants.escalao}"></td>
+            <td th:text = "${participants.pago}"></td>
+        </tr>
+    </table>
+</div>
+
+<div id="headerClassifications">
+
+    <div class = "innerEvents">
+
+        <a class="title"><span id = "spanTituloClassificações">consultar</span> Classificações &#8594;</a>
+
+        <ul id="searchClassifications">
+            <form  method="post" th:action="@{/verClassificacao}">
+
+                <li><select  name = "idEvent" required>
+                    <option value="" disabled selected>Escolha um evento:</option>
+                    <option  th:each="event : ${listAllEvents}"
+                             th:value= "${event.id}"
+                             th:text="${event.nome}"></option>
+                </select>
+                </li>
+
+                <li>
+                <select  name = "classType" required>
+                    <option value="" disabled selected>Escolha o tipo de classificação:</option>
+                    <option value="n">Classificação Geral</option>
+                    <option value="m">Geral Masculina</option>
+                    <option value="f">Geral Feminina</option>
+                </select>
+                </li>
+
+                <li>
+                <input class="searchParticipant" name="pesquisa" type="text" placeholder="pesquise aqui">
+                <select id = "nomeOuEscalao" name="filter">
+                    <option value="semfiltro" selected="selected">&lt;Sem Filtro&gt;</option>
+                    <option value="nome">Nome</option>
+                    <option value="escalao">Escalão</option>
+                </select>
+
+                <button class="eventsButtons" type="submit">Pesquisar</button>
+                </li>
+
+            </form>
+        </ul>
+
+    </div>
+</div>
+
+<div id = "classifications">
+
+    <table>
+        <div th:if="${not #lists.isEmpty(listClassificationGeral) or not #lists.isEmpty(listClassification)}">
+            <div th:if="${not #lists.isEmpty(listClassificationGeral)}">
+                <tr >
+                    <th>Nome</th>
+                    <th>Dorsal</th>
+                    <th>Género</th>
+                    <th>Escalão</th>
+                    <th>Ponto da prova</th>
+                    <th>Tempo</th>
+                    <th>Posição</th>
+                </tr>
+                <tr th:each="participants : ${listClassificationGeral}">
+                    <td th:text = "${participants.nome}"></td>
+                    <td th:text = "${participants.dorsal}"></td>
+                    <td th:text = "${participants.genero}"></td>
+                    <td th:text = "${participants.escalao}"></td>
+                    <td th:text = "${participants.lastSeen}"></td>
+                    <td th:text = "${participants.tempo}"></td>
+                    <td th:text = "${participants.posGeral}"></td>
+                </tr>
+            </div>
+
+            <div th:if="${not #lists.isEmpty(listClassification)}">
+                <tr >
+                    <th>Nome</th>
+                    <th>Dorsal</th>
+                    <th>Género</th>
+                    <th>Escalão</th>
+                    <th>Ponto da prova</th>
+                    <th>Tempo</th>
+                    <th>Posição</th>
+                </tr>
+                <tr th:each="participants : ${listClassification}">
+                    <td th:text = "${participants.nome}"></td>
+                    <td th:text = "${participants.dorsal}"></td>
+                    <td th:text = "${participants.genero}"></td>
+                    <td th:text = "${participants.escalao}"></td>
+                    <td th:text = "${participants.lastSeen}"></td>
+                    <td th:text = "${participants.tempo}"></td>
+                    <td th:text = "${participants.posInter}"></td>
+                </tr>
+            </div>
+        </div>
+    </table>
+</div>
+
+<div id="headerParticipant">
+
+    <div class = "innerEvents">
+
+        <a class="title"><span id = "spanTituloParticipant">procurar</span> Participante &#8594;</a>
+
+        <ul id="searchParticipant">
+            <form  method="post" th:action="@{/verParticipante}">
+
+                <li><select  name = "idEvent" required>
+                    <option value="" disabled selected>Escolha um evento:</option>
+                    <option  th:each="event : ${listAllEvents}"
+                             th:value= "${event.id}"
+                             th:text="${event.nome}"></option>
+                </select>
+                </li>
+
+                    <input id="searchParticipantName" name="pesquisa" type="text" placeholder="Introduza o nome do participante">
+
+                    <button class="eventsButtons" type="submit">Pesquisar</button>
+                </li>
+            </form>
+        </ul>
+    </div>
+</div>
+
+<div id = "participant">
+
+    <table>
+        <div th:if="${not #lists.isEmpty(listParticipant)}">
+            <tr >
+                <th>Nome</th>
+                <th>Dorsal</th>
+                <th>Ponto da prova</th>
+                <th>Tempo</th>
+                <th>Posição</th>
+            </tr>
+            <tr th:each="participants : ${listParticipant}">
+                <td th:text = "${participants.nome}"></td>
+                <td th:text = "${participants.dorsal}"></td>
+                <td th:text = "${participants.lastSeen}"></td>
+                <td th:text = "${participants.tempo}"></td>
+                <td th:text = "${participants.posGeral}"></td>
+            </tr>
+        </div>
+    </table>
+</div>
+
+<div id = "sobreNos">
+
+    <div class = "innerEvents">
+        <a class="title"><span>sobre</span> Nós &#9997;</a>
+
+        <p> Ao contactar a LEGsGO, pode contar com uma equipa com larga experiência na organização e gestão de eventos desportivos,
+            permitindo total flexibilidade nos serviços a serem prestados de acordo com as necessidades das organizações!
+            Somos o parceiro ideal para que seu evento seja um sucesso. Dispomos de um conjunto de serviços relacionados com a organização
+            e gestão de eventos desportivos com diversas linhas de atividade que atendem às suas necessidades.
+        </p>
+
+    </div>
+
+</div>
+<div id = "credits">
+    <p class = "pSponsors">Patrocinadores: <img th:src ="@{/assets/delta.png}" id="sponsorImg"></p>
+    <p class = "pSponsors"><img th:src ="@{/assets/instagram.png}" class="socialImg">@o_caramelo<br><img th:src ="@{/assets/instagram.png}" class="socialImg" >@faustinodioguera</p>
+    <p class = "pSponsors">Desenvolvido por:<br>Luís Marques<br>Diogo Faustino</p>
+</div>
+
+</body>
+</html>

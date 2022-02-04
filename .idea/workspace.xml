@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="09fdfb24-469d-4731-8392-d74599fba2d8" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="CSS File" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="23nT2O7NjJ5Vicjjbz85LWFlgxu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tw" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="Main (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Trabalho2.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tw.Main" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Trabalho2.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tw.Main" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Main" />
+      <item itemvalue="Spring Boot.Main (1)" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09fdfb24-469d-4731-8392-d74599fba2d8" name="Changes" comment="" />
+      <created>1642368643318</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642368643318</updated>
+      <workItem from="1642368644621" duration="2235000" />
+      <workItem from="1642371632481" duration="9595000" />
+      <workItem from="1642385804728" duration="62000" />
+      <workItem from="1642385881111" duration="2987000" />
+      <workItem from="1642418170011" duration="692000" />
+      <workItem from="1642419047397" duration="3632000" />
+      <workItem from="1642428149872" duration="1977000" />
+      <workItem from="1642436503384" duration="19305000" />
+      <workItem from="1642459475130" duration="9796000" />
+      <workItem from="1642502465664" duration="6123000" />
+      <workItem from="1642519707324" duration="5759000" />
+      <workItem from="1642532246958" duration="3040000" />
+      <workItem from="1642535926128" duration="15510000" />
+      <workItem from="1642556329544" duration="2196000" />
+      <workItem from="1642559126361" duration="2020000" />
+      <workItem from="1642561241060" duration="79000" />
+      <workItem from="1642561543532" duration="643000" />
+      <workItem from="1642597071532" duration="868000" />
+      <workItem from="1642599111905" duration="33000" />
+      <workItem from="1642599900984" duration="3760000" />
+      <workItem from="1642604144418" duration="2916000" />
+      <workItem from="1642609445803" duration="38607000" />
+      <workItem from="1642673721613" duration="14664000" />
+      <workItem from="1642704788457" duration="3626000" />
+      <workItem from="1642720077446" duration="4508000" />
+      <workItem from="1642771932462" duration="1401000" />
+      <workItem from="1642777245922" duration="40270000" />
+      <workItem from="1642862321955" duration="20400000" />
+      <workItem from="1642890907843" duration="12000" />
+      <workItem from="1642890996014" duration="14909000" />
+      <workItem from="1642941218909" duration="24271000" />
+      <workItem from="1642984731177" duration="9394000" />
+      <workItem from="1643017702527" duration="3857000" />
+      <workItem from="1643046168139" duration="30562000" />
+      <workItem from="1643110189171" duration="47382000" />
+      <workItem from="1643204345193" duration="175000" />
+      <workItem from="1643213800453" duration="1220000" />
+      <workItem from="1643216112458" duration="125000" />
+      <workItem from="1643220437278" duration="8846000" />
+      <workItem from="1643234425790" duration="10279000" />
+      <workItem from="1643247985318" duration="711000" />
+      <workItem from="1643290399221" duration="1158000" />
+      <workItem from="1643293488419" duration="542000" />
+      <workItem from="1643296589653" duration="2000" />
+      <workItem from="1643309020530" duration="14000" />
+      <workItem from="1643309117563" duration="599000" />
+      <workItem from="1643328549128" duration="4178000" />
+      <workItem from="1643385318604" duration="772000" />
+      <workItem from="1643723197412" duration="296000" />
+      <workItem from="1643725066898" duration="1758000" />
+      <workItem from="1643813674283" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

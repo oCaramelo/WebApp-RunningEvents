@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de inscrições</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+
+<img id= "eventListBackground" th:src="@{/assets/eventList.jpeg}">
+<div id = "innerLogo">
+    <a href="" class="logo" th:href="@{/}">LEGs<span id="spanLogin">GO</span></a>
+</div>
+<div id = "eventosConsulta">
+
+    <form method="post" th:action="@{/pagarReferencia}">
+        <ul th:each="event : ${EventsSigned}">
+            <li><strong><a class="nameEvents" th:text="${event.nome}"></a></strong></li>
+            <li><strong>Nome do evento:</strong> <a th:text="${event.nameEvent}"></a></li>
+            <li><strong>Entidade:</strong> <a th:text="${event.entidade}"></a></li>
+            <li><strong>Referência:</strong> <a th:text="${event.referencia}"></a></li>
+            <li><strong>Valor:</strong> <a th:text="${event.valor}"></a>€</li>
+            <li><strong>Pago:</strong> <a th:text="${event.pago}"></a></li>
+            <li><button name="reference" th:value="${event.referencia}">Pagar</button></li>
+        </ul>
+    </form>
+</div>
+
+</body>
+</html>

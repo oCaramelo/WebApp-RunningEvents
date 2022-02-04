@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LEGsGO User Page</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<img id="userBackground" th:src="@{/assets/user.jpeg}">
+<div id = "userPage">
+    <div id="logoDiv">
+        <a id="UserTitle" th:href="@{/}">LEGs<span>GO</span> - Bem-vindo <span>[[${#httpServletRequest.remoteUser}]]</span></a>
+    </div>
+    <br>
+    <ul id="userActions">
+        <li id="optionsTitle">Ações Disponíveis:</a></li>
+        <li> <a class="options" th:href="@{/addParticipant}">&#8594; Inscrição num evento</a></li>
+        <li><a class="options" th:href="@{/eventList}">&#8594; Ver os eventos a que está inscrito</a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registar Evento</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<img id= "addEventBackground" th:src="@{/assets/addEvent.jpeg}">
+<div id="addEvent">
+    <div id="innerEvent">
+        <div id="eventTitle">
+            <h2>Registar Evento</h2>
+        </div>
+        <form method="post" th:action="@{/registarEvento}">
+
+            <p><input type="text" name="nome" id="nomeEvento" placeholder="Nome do evento"></p>
+
+            <p> Local: <input type="text" name="local" id="localEvento" placeholder="Local do Evento"></p>
+
+            <p> Data: <input type="text" name="data" id="dataEvento" placeholder='yyyy-mm-dd'></p>
+
+            <p> Hora: <input type="text" name="hora" id="horaEvento" placeholder='hh:mm:ss'></p>
+
+            <p> Descrição:</p>
+            <textarea id="descricaoEvento" name="descricao" rows="4" cols="50" placeholder='Insira uma descrição...'></textarea>
+
+            <p> Valor: <input name= "valor" id = "valorEvento" type="number" min="0.00" max="1000.00" step="0.01" placeholder="Valor do evento em euros"></p>
+
+            <p><button id="registarEvento" type="submit">Registar</button></p>
+
+            <p id="backAddEvent"><a th:href="@{/admin}">voltar</a></p>
+
+    </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,675 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+    font-family: sans-serif;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mainBody{
+    background-image: url('../assets/homepage.jpeg');
+    background-repeat: repeat;
+}
+
+.inner{
+    width: 1900px;
+    height: 100%;
+    margin: 0 2%;
+}
+
+.logo{
+    height: 100%;
+    margin-top: 20px;
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+    float: left;
+}
+
+.logo span{
+    font-weight: 800;
+    color:#1ab26b
+}
+
+header #nav{
+    height: 100%;
+    float:right;
+    display: flex;
+}
+
+header #nav li{
+    height: 100%;
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+header #nav button{
+    height: 50%;
+    float: left;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+
+header #nav .twoButtons{
+    display: inline-flex;
+}
+
+
+header #nav li .hover:hover {
+    color: #1ab26b;
+}
+
+header #nav li a{
+    color: #101010;
+}
+
+header #nav .button{
+    background-color: #1ab26b;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+header #nav .button:hover{
+    filter: brightness(1.05);
+}
+
+#headerEvents{
+    width: 100%;
+    font-family: sans-serif;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#headerEvents .innerEvents{
+    width: 1840px;
+    height: 100%;
+    margin: 0 2%;
+    display:flex;
+}
+
+.title {
+
+    height: 100%;
+    margin: 20px 2%;
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: 200;
+    color:black;
+    float: left;
+    width: 1700px;
+}
+
+.title span{
+    font-weight: 800;
+    color:#1ab26b
+}
+
+#headerEvents ul{
+    height: 100%;
+    float:right;
+    display: flex;
+    align-items: center;
+
+}
+
+#headerEvents ul li{
+    height: 100%;
+    width: 100%;
+    margin-right: 30px;
+    float: left;
+    margin-top: 30px;
+    display: flex;
+}
+
+#headerEvents .eventsButtons,
+#headerParticipants .eventsButtons,
+#headerClassifications .eventsButtons,
+#headerParticipant .eventsButtons,
+#paginationButtons ul li a {
+    box-shadow:inset 0 1px 0 0 #ffffff;
+    background: #f9f9f9 linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#1ab26b;
+    font-family: sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    text-shadow:0 1px 0 #ffffff;
+}
+
+#headerEvents .eventsButtons,
+#headerParticipants .eventsButtons,
+#headerClassifications .eventsButtons,
+#paginationButtons ul li a{
+    padding:6px 24px;
+}
+
+#headerEvents .eventsButtons,
+#headerParticipants .eventsButtons,
+#headerClassifications .eventsButtons{
+    height: 80%;
+}
+
+#headerEvents #search,#headerEvents #dateorname{
+    height: 50%;
+    align-items: flex-end;
+}
+
+#headerEvents .eventsButtons:hover {
+    background: #e9e9e9 linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+}
+#headerEvents .eventsButtons:active {
+    position:relative;
+    top:1px;
+}
+
+#eventos #eventsListEmpty,
+#eventos #eventsListNotEmpty{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1ab26b;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+}
+
+#eventos #eventsListEmpty ul,
+#eventos #eventsListNotEmpty ul{
+    flex: 1 1 calc(100%/6);
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+#eventos #eventsListEmpty ul li,
+#eventos #eventsListNotEmpty ul li {
+    margin-left: 20px;
+    padding: 15px;
+    color: white;
+    border-color: black;
+    border-radius:30px ;
+    font-weight: bold;
+    text-align:center;
+}
+
+#paginationButtons{
+    width: 100%;
+    font-family: sans-serif;
+    align-items: center;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+}
+
+#paginationButtons ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#headerParticipants,
+#headerClassifications,
+#headerParticipant{
+    width: 100%;
+    font-family: sans-serif;
+}
+
+#headerParticipants .innerEvents{
+    width: 1840px;
+    height: 100%;
+    margin: 0 2%;
+    display:flex;
+}
+
+#headerParticipants ul{
+    height: 100%;
+    float:right;
+    display: flex;
+    align-items: flex-end;
+}
+
+#headerParticipants ul li{
+    height: 100%;
+    width: 100%;
+    margin-right: 30px;
+    float: left;
+    margin-top: 30px;
+    display: flex;
+}
+
+#participants,
+#participant,
+#classifications{
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+}
+
+#participants table,
+#classifications table,
+#participant table{
+    width: 80%;
+    justify-content: center;
+    border-collapse: collapse;
+    margin: 0 auto 2% auto;
+}
+
+#participants table,
+#participants th,
+#participants td,
+#classifications table,
+#classifications th,
+#classifications td,
+#participant table,
+#participant th,
+#participant td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+#participants th,
+#classifications th,
+#participant th{
+    background-color:#1ab26b;
+    color: #ffffff;
+    text-align: center;
+    height: 50px;
+}
+
+#headerClassifications .innerEvents{
+    width: 1860px;
+    height: 100%;
+    margin: 0 2%;
+    display:flex;
+    align-items: center;
+}
+
+#headerClassifications #searchClassifications{
+    width: 100%;
+    display:flex;
+    float:right;
+    justify-content: flex-end;
+}
+
+#headerClassifications .innerEvents #searchClassifications li{
+    height: 25px;
+    float: left;
+    margin-right: 10px;
+}
+
+#headerClassifications .innerEvents #searchClassifications .searchParticipant{
+    width:40%;
+}
+
+#headerClassifications .innerEvents #searchClassifications .eventsButtons{
+    padding: 0;
+}
+
+#headerParticipant{
+    width: 100%;
+    font-family: sans-serif;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#headerParticipant .innerEvents{
+    width: 1805px;
+    height: 100%;
+    margin: 0 2%;
+    display:flex;
+}
+
+#headerParticipant .innerEvents #searchParticipant{
+    width: 100%;
+    display:flex;
+    float:right;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#headerParticipant .innerEvents #searchParticipant li{
+    height: 25px;
+    float: left;
+    margin-right: 10px;
+}
+
+#headerParticipant .innerEvents #searchParticipant .eventsButtons{
+    padding: 0;
+}
+
+#sobreNos{
+    width: 100%;
+    font-family: sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+}
+
+#sobreNos .innerEvents{
+    width: 1660px;
+    height: 100%;
+    margin: 0 2%;
+    display: block;
+}
+
+#sobreNos .innerEvents p{
+    font-size: 1em;
+    max-width: 40%;
+    text-align: justify;
+    margin: 20px 2%;
+}
+
+#credits {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+#credits #sponsorImg {
+    position: relative;
+    width: 15%;
+    height: auto;
+    left: 15px;
+}
+
+#credits .socialImg {
+    position: relative;
+    width: 10%;
+    right: 15px;
+    top:5px
+}
+
+#credits .pSponsors{
+    font-size: 1em;
+    width: 15%;
+    margin: auto;
+}
+
+.inner .logo #spanLogin{
+    color:white;
+}
+
+#bodyLogin {
+    background-color: #1ab26b;
+    font-family: sans-serif;
+}
+
+#login,
+#register,
+#addParticipant,
+#addTime{
+    width: 420px;
+    padding: 6% 0;
+    margin: auto;
+}
+
+#addEvent{
+    padding: 4% 0;
+
+}
+
+#login #innerLogin #loginTitle,
+#register #innerRegister #registerTitle,
+#addParticipant #innerParticipant #participantTitle,
+#addTime #innerTime #timeTitle,
+#addEvent #innerEvent #eventTitle{
+    margin-bottom: 26px;
+}
+#addParticipant #innerParticipant #backAddParticipant,
+#addTime #innerTime #backAddTime,
+#addEvent #innerEvent #backAddEvent{
+    margin-top: 15px;
+    color:black;
+}
+
+#addParticipant #innerParticipant #backAddParticipant a:visited,
+#addTime #innerTime #backAddTime a:visited,
+#addEvent #innerEvent #backAddEvent a:visited{
+    color:black;
+}
+
+#innerLogin,
+#innerRegister{
+    position: relative;
+    background: white;
+    max-width: 420px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#innerParticipant,
+#innerTime{
+    position: relative;
+    background: white;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 45px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#innerEvent{
+    position: relative;
+    background: white;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px 45px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#innerLogin input,
+#innerRegister input,
+#innerParticipant input,
+#innerTime input,
+#innerEvent input,
+#addEvent #innerEvent textarea{
+    font-family: sans-serif;
+    background: #cecece;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 15px;
+}
+#innerParticipant select,
+#innerTime select{
+    margin: 0 0 15px;
+}
+
+#innerParticipant #selectGender{
+    margin: 0 0 15px;
+    display: flex;
+}
+
+#innerLogin input::placeholder,
+#innerRegister input::placeholder,
+#innerParticipant input::placeholder,
+#innerTime input::placeholder,
+#innerEvent input::placeholder,
+#addEvent #innerEvent textarea::placeholder{
+    color:#565656;
+}
+
+#innerLogin button,
+#innerRegister button,
+#innerParticipant button,
+#eventosConsulta li button,
+#innerTime button,
+#innerEvent button{
+    font-family: sans-serif;
+    background-color: #1ab26b;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#innerLogin #registerMessage {
+    margin: 15px 0 0;
+    color: gray;
+    font-size: 14px;
+}
+#innerLogin #registerMessage a {
+    color: #1ab26b;
+}
+
+#login #innerLogin #loginErrorMessage {
+    margin-bottom: 10px;
+    color: #d10300;
+}
+
+#loginTitle span,
+#registerTitle span{
+    color:#1ab26b
+}
+
+#loginBackground img,
+#registerBackground img,
+#userBackground,
+#participantBackground,
+#homepageBackground,
+#eventListBackground,
+#addTimeBackground,
+#addEventBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#userPage{
+    display: block;
+}
+
+#userPage #logoDiv{
+    width: 1500px;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+}
+
+#userPage #UserTitle{
+
+    width: 100%;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 15px;
+    color:white;
+    font-size: 40px;
+}
+
+#userPage #UserTitle span{
+    color: #1ab26b;
+}
+
+#userPage #userActions{
+    width: 100%;
+    margin:auto 2%;
+}
+
+#userPage #userActions #optionsTitle{
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+}
+
+#userPage #userActions li{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color:white;
+}
+
+#userPage #userActions .options:visited {
+    color: white;
+}
+
+#eventosConsulta{
+    width: 100%;
+}
+
+#eventosConsulta ul{
+    display: inline-block;
+    width: 25%;
+    min-height: 20vh;
+    min-width: 200px;
+    max-width: 230px;
+    padding: 40px 20px 40px;
+    position: relative;
+    vertical-align: top;
+    margin: 80px 2% 10px 2%;
+    font-family: sans-serif;
+    background: white;
+    text-align: center;
+    border: 1px solid black;
+ }
+
+#eventosConsulta li {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+
+#eventosConsulta li .nameEvents {
+    text-align: center;
+    color: #1ab26b;
+    font-size: 20px;
+}
+
+#eventosConsulta li .nameEvents a {
+    text-align: center;
+}
+
+#innerLogo {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin: 0 2%;
+    padding: 20px 10px
+}
+
+#innerLogo .logo span{
+    color: white;
+}
+
+#addEvent #innerEvent textarea{
+    resize: none;
+}

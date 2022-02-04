@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscrição num evento</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <script>
+
+        function getInfo(){
+            $(document).ready(function(){
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://alunos.di.uevora.pt/tweb/t2/mbref4payment",
+                    data: $('#sendForm').serialize(),
+                    dataType: "json",
+                    success: function(data) {
+                        document.getElementById("entidadeID").value = data.mb_entity;
+                        document.getElementById("referenciaID").value = data.mb_reference;
+                        document.getElementById("valorID").value = data.mb_amount;
+                    },
+                    error: function() {
+                        alert('error handling here');
+                    }
+                });
+            });
+        }
+
+        function setValor(id){
+
+            let valor = document.getElementById(id).innerHTML;
+            console.log(valor);
+            document.getElementById("amountID").value = valor;
+            getInfo();
+        }
+    </script>
+</head>
+<body>
+
+<img id= "participantBackground" th:src="@{/assets/participant.jpeg}">
+
+
+<div id="addParticipant">
+    <div id="innerParticipant">
+        <div id="participantTitle">
+            <h3>Inscrição num evento:</h3>
+        </div>
+        <form id="inscricaoEvento"  method="post" th:action="@{/adicionarParticipante}">
+
+            <p><input type="text" name="nome" id="nomeUser" required placeholder="Nome do Participante"></p>
+
+            <div id="selectGender">
+                Masculino<input type="radio" name="genero" value="m" checked>
+                <input type="radio" name="genero" value="f">Feminino
+            </div>
+
+            <p>Escalão:
+                <select name="escalao">
+                    <option value="juniores">Junior</option>
+                    <option value="seniores">Senior</option>
+                    <option value="veteranos35">Veteranos 35</option>
+                    <option value="veteranos40">Veteranos 40</option>
+                    <option value="veteranos50">Veteranos 50</option>
+                    <option value="veteranos60+">Veteranos 60+</option>
+                </select>
+            </p>
+
+            <p>Evento:
+                <select id="selectEvent" onchange="setValor(this.value)" name = "idEvent">
+                    <option selected disabled>Escolha um evento:</option>
+                    <option  th:each="event : ${listEvents}"
+                             th:value= "${event.id}"
+                             th:text="${event.nome}"></option>
+                </select>
+            </p>
+
+            <p>Valor:
+                <input id = "valorID" type="number"  name="valor" min="0.00" max="1000.00" step="0.01" placeholder="em Euros (€)" readonly>
+            </p>
+            <p>Entidade:
+                <input id = "entidadeID" type="text" name="entidade" placeholder="Entidade" readonly>
+            </p>
+            <p>Referência:
+                <input id = "referenciaID" type="text" name="referencia" placeholder="Referencia" readonly>
+            </p>
+
+            <p><button id="inscricaoEventoButton" type="submit">Inscreva-se</button></p>
+
+            <p id="backAddParticipant"><a th:href="@{/user}">voltar</a></p>
+        </form>
+    </div>
+    <form id="sendForm">
+        <input id ="amountID" type="text" style="display: none" name="amount">
+    </form>
+
+    <tr th:each="events : ${listEvents}">
+        <p style="display: none" th:id = "${events.id}" th:text = "${events.valor}"></p>
+    </tr>
+
+</div>
+</body>
+</html>
